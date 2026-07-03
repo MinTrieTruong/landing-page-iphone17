@@ -108,11 +108,11 @@ CREATE TABLE IF NOT EXISTS webhook_logs (
 -- SEED DATA: products
 -- ================================================
 INSERT INTO products (name, model, price, price_label, color, color_hex, storage, image_url, description) VALUES
-('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Titan Đen',    '#1C1C1E', '128GB', '/images/iphone17-black.png',   'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
-('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Cát Sa Mạc',   '#C4A882', '128GB', '/images/iphone17-sand.png',    'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
-('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Xanh Trời',    '#7FB3D3', '128GB', '/images/iphone17-blue.png',    'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
-('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Ánh Sao',      '#F5F0E8', '128GB', '/images/iphone17-white.png',   'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
-('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Tím Sâu',      '#3D1F5E', '128GB', '/images/iphone17-purple.png',  'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
+('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Tím Oải Hương', '#D1C4E9', '128GB', '/images/iphone17-lavender.jpg', 'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
+('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Xanh Lá Xô Thơm','#C8E6C9', '128GB', '/images/iphone17-all.jpg',      'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
+('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Xanh Lam Khói', '#B3E5FC', '128GB', '/images/iphone17-all.jpg',      'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
+('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Đen',           '#212121', '128GB', '/images/iphone17-black.png',    'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
+('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Trắng',         '#F5F5F5', '128GB', '/images/iphone17-white.png',    'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
 ('iPhone 17 Pro',       'iphone17_pro',     35990000, '35.990.000đ', 'Bạc',          '#d6d6d6', '256GB', '/images/iphone17pro-silver.jpg', 'Khung titan, camera 5x, chip A19 Pro'),
 ('iPhone 17 Pro',       'iphone17_pro',     35990000, '35.990.000đ', 'Xanh Đậm',     '#354556', '256GB', '/images/iphone17pro-blue.png',   'Khung titan, camera 5x, chip A19 Pro'),
 ('iPhone 17 Pro',       'iphone17_pro',     35990000, '35.990.000đ', 'Cam Vũ Trụ',   '#d87040', '256GB', '/images/iphone17pro-orange.jpg', 'Khung titan, camera 5x, chip A19 Pro'),

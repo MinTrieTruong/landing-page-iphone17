@@ -16,10 +16,10 @@ export const ProductLineup = () => {
       model: 'iphone17',
       price: 27990000,
       price_label: '27.990.000đ',
-      color: 'Titan Đen',
-      color_hex: '#1C1C1E',
+      color: 'Tím Oải Hương',
+      color_hex: '#D1C4E9',
       storage: '128GB',
-      image_url: '/images/iphone17-black.png',
+      image_url: '/images/iphone17-lavender.jpg',
       description: 'Thiết kế mỏng nhẹ, chip A19, camera 48MP'
     },
     {

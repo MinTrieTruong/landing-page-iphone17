@@ -178,7 +178,7 @@ export const OrderForm = () => {
   // Model change helper to update default colors
   const handleModelChange = (e) => {
     const selectedModel = e.target.value;
-    let defaultColor = 'Titan Đen';
+    let defaultColor = 'Tím Oải Hương';
     let defaultStorage = '128GB';
 
     if (selectedModel === 'iphone17_pro') {
@@ -318,11 +318,11 @@ export const OrderForm = () => {
                   >
                     {formData.model === 'iphone17' && (
                       <>
-                        <option value="Titan Đen">Titan Đen</option>
-                        <option value="Cát Sa Mạc">Cát Sa Mạc</option>
-                        <option value="Xanh Trời">Xanh Trời</option>
-                        <option value="Ánh Sao">Ánh Sao</option>
-                        <option value="Tím Sâu">Tím Sâu</option>
+                        <option value="Tím Oải Hương">Tím Oải Hương (Lavender)</option>
+                        <option value="Xanh Lá Xô Thơm">Xanh Lá Xô Thơm (Sage)</option>
+                        <option value="Xanh Lam Khói">Xanh Lam Khói (Mist Blue)</option>
+                        <option value="Đen">Đen (Black)</option>
+                        <option value="Trắng">Trắng (White)</option>
                       </>
                     )}
                     {formData.model === 'iphone17_pro' && (

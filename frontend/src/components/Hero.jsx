@@ -6,11 +6,11 @@ export const Hero = () => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
   const colors = [
-    { name: 'Titan Đen', id: 'black', hex: '#1C1C1E', img: '/images/iphone17-black.png' },
-    { name: 'Cát Sa Mạc', id: 'sand', hex: '#C4A882', img: '/images/iphone17-sand.png' },
-    { name: 'Xanh Trời', id: 'blue', hex: '#7FB3D3', img: '/images/iphone17-blue.png' },
-    { name: 'Ánh Sao', id: 'white', hex: '#F5F0E8', img: '/images/iphone17-white.png' },
-    { name: 'Tím Sâu', id: 'purple', hex: '#3D1F5E', img: '/images/iphone17-purple.png' },
+    { name: 'Tím Oải Hương (Lavender)', id: 'lavender', hex: '#D1C4E9', img: '/images/iphone17-lavender.jpg' },
+    { name: 'Xanh Lá Xô Thơm (Sage)', id: 'sage', hex: '#C8E6C9', img: '/images/iphone17-all.jpg' },
+    { name: 'Xanh Lam Khói (Mist Blue)', id: 'mist_blue', hex: '#B3E5FC', img: '/images/iphone17-all.jpg' },
+    { name: 'Đen (Black)', id: 'black', hex: '#212121', img: '/images/iphone17-black.png' },
+    { name: 'Trắng (White)', id: 'white', hex: '#F5F5F5', img: '/images/iphone17-white.png' },
   ];
 
   const handleMouseMove = (e) => {
