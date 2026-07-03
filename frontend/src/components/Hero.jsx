@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 
 export const Hero = () => {
-  const [selectedColor, setSelectedColor] = useState('black');
+  const [selectedColor, setSelectedColor] = useState(null);
   const heroRef = useRef(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
@@ -27,7 +27,8 @@ export const Hero = () => {
     setRotation({ x: 0, y: 0 });
   };
 
-  const activeColor = colors.find((c) => c.id === selectedColor) || colors[0];
+  const activeColor = selectedColor ? colors.find((c) => c.id === selectedColor) : null;
+  const activeImg = activeColor ? activeColor.img : '/images/iphone17-hero.png';
 
   return (
     <section
@@ -57,7 +58,7 @@ export const Hero = () => {
           {/* Color Selector */}
           <div className="space-y-3">
             <span className="text-sm font-semibold text-gray-500 dark:text-zinc-400 block">
-              Màu sắc: <strong className="text-gray-900 dark:text-white">{activeColor.name}</strong>
+              Màu sắc: <strong className="text-gray-900 dark:text-white">{activeColor ? activeColor.name : 'Titanium'}</strong>
             </span>
             <div className="flex justify-center lg:justify-start gap-3">
               {colors.map((color) => (
@@ -97,17 +98,17 @@ export const Hero = () => {
           className="flex justify-center items-center h-[400px] sm:h-[550px] relative cursor-pointer"
         >
           <div
-            className="phone-3d relative w-72 sm:w-96 aspect-[9/18.5] flex items-center justify-center transition-transform duration-100 ease-out"
+            className="phone-3d relative w-full max-w-lg aspect-square lg:aspect-video flex items-center justify-center transition-transform duration-100 ease-out"
             style={{
               transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
             }}
           >
             <img
-              src={activeColor.img}
-              alt={`iPhone 17 ${activeColor.name}`}
-              className="w-full h-full object-contain pointer-events-none drop-shadow-2xl"
+              src={activeImg}
+              alt={activeColor ? `iPhone 17 ${activeColor.name}` : 'iPhone 17 Pro Hero'}
+              className="w-full h-full max-h-[480px] object-contain pointer-events-none drop-shadow-2xl rounded-2xl"
               onError={(e) => {
-                e.target.src = '/images/iphone17-hero.png';
+                e.target.src = '/images/iphone17-black.png';
               }}
             />
           </div>
