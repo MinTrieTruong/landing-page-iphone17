@@ -28,7 +28,7 @@ export const Hero = () => {
   };
 
   const activeColor = selectedColor ? colors.find((c) => c.id === selectedColor) : null;
-  const activeImg = activeColor ? activeColor.img : '/images/iphone17-hero.png';
+  const activeImg = activeColor ? activeColor.img : '/images/iphone17-hero.webp';
 
   return (
     <section
@@ -107,6 +107,7 @@ export const Hero = () => {
               src={activeImg}
               alt={activeColor ? `iPhone 17 ${activeColor.name}` : 'iPhone 17 Pro Hero'}
               className="w-full h-full max-h-[480px] object-contain pointer-events-none drop-shadow-2xl rounded-2xl"
+              fetchpriority="high"
               onError={(e) => {
                 e.target.src = '/images/iphone17-black.png';
               }}

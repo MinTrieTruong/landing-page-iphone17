@@ -151,6 +151,7 @@ export const ProductLineup = () => {
                   src={product.image_url}
                   alt={product.name}
                   className="w-44 h-44 object-contain group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
                   onError={(e) => {
                     e.target.src = '/images/iphone17-hero.png';
                   }}

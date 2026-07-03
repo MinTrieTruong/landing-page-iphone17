@@ -65,6 +65,7 @@ export const CartDrawer = ({ isOpen, onClose }) => {
                   src={item.image_url}
                   alt={item.name}
                   className="w-16 h-16 object-contain bg-white dark:bg-transparent rounded-lg"
+                  loading="lazy"
                 />
                 <div className="flex-grow">
                   <h4 className="font-semibold text-sm line-clamp-1">{item.name}</h4>

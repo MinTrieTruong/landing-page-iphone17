@@ -35,6 +35,7 @@ export const ViewedHistory = () => {
                 src={item.image_url ? item.image_url.replace('.webp', '.png') : '/images/iphone17-black.png'}
                 alt={item.name}
                 className="w-16 h-16 object-contain bg-zinc-50 dark:bg-transparent rounded-lg group-hover:scale-105 transition-transform"
+                loading="lazy"
                 onError={(e) => {
                   e.target.src = '/images/iphone17-hero.png';
                 }}
