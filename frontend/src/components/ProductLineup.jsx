@@ -52,10 +52,10 @@ export const ProductLineup = () => {
       model: 'iphone_air',
       price: 23990000,
       price_label: '23.990.000đ',
-      color: 'Ánh Sao',
-      color_hex: '#F5F0E8',
+      color: 'Tím Oải Hương',
+      color_hex: '#D1C4E9',
       storage: '128GB',
-      image_url: '/images/iphoneair-white.png',
+      image_url: '/images/iphone17-lavender.jpg',
       description: 'Mỏng nhất từ trước đến nay, chỉ 5.5mm'
     }
   ];
@@ -71,8 +71,10 @@ export const ProductLineup = () => {
           res.data.data.forEach((p) => {
             if (!seen.has(p.model)) {
               seen.add(p.model);
-              // Use direct image_url since schema.sql has correct file extension now
-              uniqueModels.push({ ...p });
+              // Use correct generated local assets if backend points to .webp
+              let img = p.image_url.replace('.webp', '.png');
+              if (p.model === 'iphone_air') img = '/images/iphone-air-white.png';
+              uniqueModels.push({ ...p, image_url: img });
             }
           });
           setProducts(uniqueModels);
@@ -87,7 +89,9 @@ export const ProductLineup = () => {
       }
     };
     fetchProducts();
-  }, []);  const handleCardClick = (product) => {
+  }, []);
+
+  const handleCardClick = (product) => {
     logViewProduct(product.id);
   };
 
@@ -95,31 +99,11 @@ export const ProductLineup = () => {
     return favorites.some((f) => f.product_id === productId);
   };
 
-  // Re-observe cards and header after loading is complete and products are rendered
-  useEffect(() => {
-    if (!loading) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      const elements = document.querySelectorAll('#lineup .reveal, #lineup .reveal-scale');
-      elements.forEach((el) => observer.observe(el));
-
-      return () => {
-        elements.forEach((el) => observer.unobserve(el));
-      };
-    }
-  }, [loading, products]);
-
   if (loading) {
     return (
-      <div className="py-24 text-center bg-white dark:bg-black">
+      <div className="py-24 text-center">
         <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-gray-500 dark:text-zinc-400 font-semibold">Đang tải sản phẩm...</p>
+        <p className="text-gray-500">Đang tải sản phẩm...</p>
       </div>
     );
   }
@@ -127,9 +111,9 @@ export const ProductLineup = () => {
   return (
     <section id="lineup" className="section bg-white dark:bg-black transition-colors duration-300">
       <div className="container max-w-7xl mx-auto px-4">
-        
+
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 reveal">
+        <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-sm font-bold tracking-wider text-blue-500 uppercase mb-3">Bộ Sưu Tập</h2>
           <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
             Chọn Dòng iPhone 17 Phù Hợp
@@ -144,7 +128,7 @@ export const ProductLineup = () => {
           {products.map((product) => (
             <div
               key={product.id}
-              className="product-card flex flex-col justify-between cursor-pointer reveal-scale"
+              className="product-card flex flex-col justify-between cursor-pointer"
               onClick={() => handleCardClick(product)}
             >
               {/* Image & Favorite Icon */}
@@ -155,11 +139,10 @@ export const ProductLineup = () => {
                     e.stopPropagation();
                     toggleFavorite(product.id, product.name);
                   }}
-                  className={`absolute top-4 right-4 p-2.5 rounded-full border bg-white dark:bg-zinc-800 transition-colors z-10 ${
-                    isFavorite(product.id)
+                  className={`absolute top-4 right-4 p-2.5 rounded-full border bg-white dark:bg-zinc-800 transition-colors z-10 ${isFavorite(product.id)
                       ? 'border-red-500/20 text-red-500 bg-red-500/5'
                       : 'border-gray-200 dark:border-zinc-700 text-gray-400 hover:text-red-500'
-                  }`}
+                    }`}
                 >
                   <Heart className={`w-5 h-5 ${isFavorite(product.id) ? 'fill-current' : ''}`} />
                 </button>

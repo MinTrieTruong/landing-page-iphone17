@@ -8,8 +8,6 @@ async function migrate() {
     const schemaPath = path.join(__dirname, '../../database/schema.sql');
     const sqlContent = fs.readFileSync(schemaPath, 'utf8');
 
-    // Split statements, avoiding simple splits inside triggers or procedural code if any
-    // Our schema.sql only contains standard DDL and DML queries ending in ';' followed by newline.
     const statements = sqlContent
       .split(/;\r?\n/)
       .map(stmt => stmt.trim())
@@ -17,12 +15,10 @@ async function migrate() {
 
     const conn = await pool.getConnection();
 
-    // Disable foreign key checks temporarily to drop/recreate smoothly
     await conn.query('SET FOREIGN_KEY_CHECKS = 0');
 
     for (let i = 0; i < statements.length; i++) {
       const stmt = statements[i];
-      // Clean up statements
       if (stmt.startsWith('--') || stmt.startsWith('/*')) continue;
       
       try {

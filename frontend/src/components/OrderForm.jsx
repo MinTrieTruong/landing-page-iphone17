@@ -178,14 +178,14 @@ export const OrderForm = () => {
   // Model change helper to update default colors
   const handleModelChange = (e) => {
     const selectedModel = e.target.value;
-    let defaultColor = 'Tím Oải Hương';
+    let defaultColor = 'Titan Đen';
     let defaultStorage = '128GB';
 
     if (selectedModel === 'iphone17_pro') {
-      defaultColor = 'Bạc';
+      defaultColor = 'Titan Tự Nhiên';
       defaultStorage = '256GB';
     } else if (selectedModel === 'iphone17_pro_max') {
-      defaultColor = 'Bạc';
+      defaultColor = 'Titan Sa Mạc';
       defaultStorage = '256GB';
     } else if (selectedModel === 'iphone_air') {
       defaultColor = 'Ánh Sao';
@@ -203,7 +203,7 @@ export const OrderForm = () => {
   return (
     <section id="order-form-section" className="section bg-zinc-100 dark:bg-zinc-950/80 transition-colors duration-300">
       <div className="container max-w-5xl mx-auto px-4">
-        
+
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 reveal">
           <div className="p-3 bg-blue-500/10 rounded-2xl w-fit mx-auto text-blue-500 mb-4">
@@ -220,13 +220,13 @@ export const OrderForm = () => {
         {/* Form Container */}
         <div className="glass-card bg-white dark:bg-zinc-900 border border-gray-150 dark:border-zinc-800 rounded-3xl p-6 sm:p-10 shadow-lg reveal-scale">
           <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
+
             {/* Left Column: Customer Information */}
             <div className="space-y-4">
               <h3 className="font-bold text-lg border-b border-gray-100 dark:border-zinc-800 pb-2 mb-4">
                 Thông Tin Cá Nhân
               </h3>
-              
+
               <div>
                 <label className="form-label" htmlFor="fullName">Họ và Tên <span className="text-red-500">*</span></label>
                 <input
@@ -318,25 +318,23 @@ export const OrderForm = () => {
                   >
                     {formData.model === 'iphone17' && (
                       <>
-                        <option value="Tím Oải Hương">Tím Oải Hương (Lavender)</option>
-                        <option value="Xanh Lá Xô Thơm">Xanh Lá Xô Thơm (Sage)</option>
-                        <option value="Xanh Lam Khói">Xanh Lam Khói (Mist Blue)</option>
-                        <option value="Đen">Đen (Black)</option>
-                        <option value="Trắng">Trắng (White)</option>
+                        <option value="Titan Đen">Titan Đen</option>
+                        <option value="Cát Sa Mạc">Cát Sa Mạc</option>
+                        <option value="Xanh Trời">Xanh Trời</option>
+                        <option value="Ánh Sao">Ánh Sao</option>
+                        <option value="Tím Sâu">Tím Sâu</option>
                       </>
                     )}
                     {formData.model === 'iphone17_pro' && (
                       <>
-                        <option value="Bạc">Bạc (Silver)</option>
-                        <option value="Xanh Đậm">Xanh Đậm (Deep Blue)</option>
-                        <option value="Cam Vũ Trụ">Cam Vũ Trụ (Cosmic Orange)</option>
+                        <option value="Titan Tự Nhiên">Titan Tự Nhiên</option>
+                        <option value="Titan Đen">Titan Đen</option>
                       </>
                     )}
                     {formData.model === 'iphone17_pro_max' && (
                       <>
-                        <option value="Bạc">Bạc (Silver)</option>
-                        <option value="Xanh Đậm">Xanh Đậm (Deep Blue)</option>
-                        <option value="Cam Vũ Trụ">Cam Vũ Trụ (Cosmic Orange)</option>
+                        <option value="Titan Sa Mạc">Titan Sa Mạc</option>
+                        <option value="Titan Đen">Titan Đen</option>
                       </>
                     )}
                     {formData.model === 'iphone_air' && (
