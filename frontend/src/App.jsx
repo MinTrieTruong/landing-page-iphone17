@@ -9,13 +9,15 @@ import { AppleIntelligence } from './components/AppleIntelligence';
 import { Camera } from './components/Camera';
 import { Performance } from './components/Performance';
 import { SpecsAndColors } from './components/SpecsAndColors';
-import { ProductLineup } from './components/ProductLineup';
-import { ViewedHistory } from './components/ViewedHistory';
-import { FAQ } from './components/FAQ';
-import { OrderForm } from './components/OrderForm';
-import { Chatbot } from './components/Chatbot';
 import { Footer } from './components/Footer';
 import { ToastContainer } from './components/Toast';
+
+// Lazy load below-the-fold components
+const FAQ = React.lazy(() => import('./components/FAQ').then(m => ({ default: m.FAQ })));
+const ProductLineup = React.lazy(() => import('./components/ProductLineup').then(m => ({ default: m.ProductLineup })));
+const ViewedHistory = React.lazy(() => import('./components/ViewedHistory').then(m => ({ default: m.ViewedHistory })));
+const OrderForm = React.lazy(() => import('./components/OrderForm').then(m => ({ default: m.OrderForm })));
+const Chatbot = React.lazy(() => import('./components/Chatbot').then(m => ({ default: m.Chatbot })));
 
 const MainLayout = () => {
   // Apply our dynamic intersection observer scroll reveal transitions
@@ -47,20 +49,30 @@ const MainLayout = () => {
         <SpecsAndColors />
 
         {/* Section 8: FAQ collapsible Accordions */}
-        <FAQ />
+        <React.Suspense fallback={<div className="container max-w-7xl mx-auto px-4 py-8"><div className="h-40 bg-zinc-50 dark:bg-zinc-900 rounded-2xl animate-pulse" /></div>}>
+          <FAQ />
+        </React.Suspense>
 
         {/* Section 6: E-commerce cards shop */}
-        <ProductLineup />
+        <React.Suspense fallback={<div className="container max-w-7xl mx-auto px-4 py-12"><div className="h-[500px] bg-zinc-50 dark:bg-zinc-900 rounded-2xl animate-pulse" /></div>}>
+          <ProductLineup />
+        </React.Suspense>
 
         {/* Section 7: Browsed products Carousel */}
-        <ViewedHistory />
+        <React.Suspense fallback={<div className="container max-w-7xl mx-auto px-4 py-8"><div className="h-32 bg-zinc-50 dark:bg-zinc-900 rounded-2xl animate-pulse" /></div>}>
+          <ViewedHistory />
+        </React.Suspense>
 
         {/* Section 9: Pre-order validation form */}
-        <OrderForm />
+        <React.Suspense fallback={<div className="container max-w-7xl mx-auto px-4 py-12"><div className="h-96 bg-zinc-50 dark:bg-zinc-900 rounded-2xl animate-pulse" /></div>}>
+          <OrderForm />
+        </React.Suspense>
       </main>
 
       {/* Floating Chatbot Assistant */}
-      <Chatbot />
+      <React.Suspense fallback={null}>
+        <Chatbot />
+      </React.Suspense>
 
       {/* Dynamic Branding Footer */}
       <Footer />

@@ -42,7 +42,41 @@
     </noscript>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <section id="hero" class="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-12">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="container max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div class="text-center lg:text-left space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-500 text-xs font-bold tracking-wider uppercase">
+              🚀 Mới Nhất • Trí Tuệ Nhân Tạo Apple Intelligence
+            </div>
+            <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white">
+              iPhone 17
+            </h1>
+            <p class="text-2xl sm:text-3xl font-medium text-gray-500 dark:text-zinc-400">
+              Beyond Intelligence.
+            </p>
+            <p class="text-gray-600 dark:text-zinc-300 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base leading-relaxed">
+              Khám phá kỷ nguyên mới với Apple Intelligence hoàn toàn tiếng Việt, khung Titan siêu bền bỉ, và hiệu năng từ siêu chip A19 3nm thế hệ tiếp theo.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+              <a href="#order-form-section" class="btn-primary">Đặt trước ngay</a>
+              <a href="#ai" class="btn-secondary">Khám phá thêm</a>
+            </div>
+          </div>
+          <div class="flex justify-center items-center h-[400px] sm:h-[550px] relative">
+            <div class="phone-3d relative w-full max-w-lg aspect-square lg:aspect-video flex items-center justify-center">
+              <img
+                src="/images/iphone17-hero.webp"
+                alt="iPhone 17 Pro Hero"
+                class="w-full h-full max-h-[480px] object-contain pointer-events-none drop-shadow-2xl rounded-2xl"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
