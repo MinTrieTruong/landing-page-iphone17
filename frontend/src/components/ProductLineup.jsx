@@ -89,9 +89,7 @@ export const ProductLineup = () => {
       }
     };
     fetchProducts();
-  }, []);
-
-  const handleCardClick = (product) => {
+  }, []);  const handleCardClick = (product) => {
     logViewProduct(product.id);
   };
 
@@ -99,11 +97,31 @@ export const ProductLineup = () => {
     return favorites.some((f) => f.product_id === productId);
   };
 
+  // Re-observe cards and header after loading is complete and products are rendered
+  useEffect(() => {
+    if (!loading) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      const elements = document.querySelectorAll('#lineup .reveal, #lineup .reveal-scale');
+      elements.forEach((el) => observer.observe(el));
+
+      return () => {
+        elements.forEach((el) => observer.unobserve(el));
+      };
+    }
+  }, [loading, products]);
+
   if (loading) {
     return (
-      <div className="py-24 text-center">
+      <div className="py-24 text-center bg-white dark:bg-black">
         <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-gray-500">Đang tải sản phẩm...</p>
+        <p className="text-gray-500 dark:text-zinc-400 font-semibold">Đang tải sản phẩm...</p>
       </div>
     );
   }

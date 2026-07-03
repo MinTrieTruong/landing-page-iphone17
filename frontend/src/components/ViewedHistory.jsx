@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { Eye, ChevronRight, ShoppingCart } from 'lucide-react';
 
 export const ViewedHistory = () => {
   const { viewedHistory, addToCart } = useApp();
 
+  useEffect(() => {
+    if (viewedHistory.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      const element = document.querySelector('#viewed-section-reveal');
+      if (element) observer.observe(element);
+
+      return () => {
+        if (element) observer.unobserve(element);
+      };
+    }
+  }, [viewedHistory]);
+
   if (viewedHistory.length === 0) return null;
 
   return (
-    <section className="section-sm bg-zinc-50 dark:bg-zinc-950/80 border-t border-b border-gray-100 dark:border-zinc-900 transition-colors duration-300">
+    <section id="viewed-section-reveal" className="section-sm bg-zinc-50 dark:bg-zinc-950/80 border-t border-b border-gray-100 dark:border-zinc-900 transition-colors duration-300 reveal">
       <div className="container max-w-7xl mx-auto px-4">
         
         {/* Title */}
-        <div className="flex items-center justify-between mb-8 reveal">
+        <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-2">
             <div className="p-2 bg-blue-500/10 rounded-xl text-blue-500">
               <Eye className="w-5 h-5" />

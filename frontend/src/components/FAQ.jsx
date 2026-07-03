@@ -55,11 +55,11 @@ export const FAQ = () => {
             return (
               <div
                 key={idx}
-                className="border border-gray-150 dark:border-zinc-800 rounded-2xl overflow-hidden bg-zinc-50 dark:bg-zinc-900/40 transition-colors"
+                className="border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden bg-zinc-50 dark:bg-zinc-900/40 transition-colors"
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full p-5 text-left flex justify-between items-center gap-4 font-bold text-sm sm:text-base text-gray-800 dark:text-zinc-150 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/40 transition-colors"
+                  className="w-full p-5 text-left flex justify-between items-center gap-4 font-bold text-sm sm:text-base text-gray-800 dark:text-zinc-100 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/40 transition-colors"
                 >
                   <span>{faq.q}</span>
                   {isOpen ? (
@@ -69,7 +69,7 @@ export const FAQ = () => {
                   )}
                 </button>
                 <div className={`accordion-body ${isOpen ? 'open' : ''}`}>
-                  <div className="p-5 pt-0 text-sm sm:text-base text-gray-500 dark:text-zinc-400 border-t border-gray-100 dark:border-zinc-800/40 leading-relaxed">
+                  <div className="p-5 pt-0 text-sm sm:text-base text-gray-600 dark:text-zinc-300 border-t border-zinc-200 dark:border-zinc-850 leading-relaxed">
                     {faq.a}
                   </div>
                 </div>
