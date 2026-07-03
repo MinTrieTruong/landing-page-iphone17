@@ -46,14 +46,14 @@ const MainLayout = () => {
         {/* Section 5: Specs & Color Details Table */}
         <SpecsAndColors />
 
+        {/* Section 8: FAQ collapsible Accordions */}
+        <FAQ />
+
         {/* Section 6: E-commerce cards shop */}
         <ProductLineup />
 
         {/* Section 7: Browsed products Carousel */}
         <ViewedHistory />
-
-        {/* Section 8: FAQ collapsible Accordions */}
-        <FAQ />
 
         {/* Section 9: Pre-order validation form */}
         <OrderForm />
