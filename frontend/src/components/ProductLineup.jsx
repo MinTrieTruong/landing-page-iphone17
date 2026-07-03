@@ -28,10 +28,10 @@ export const ProductLineup = () => {
       model: 'iphone17_pro',
       price: 35990000,
       price_label: '35.990.000đ',
-      color: 'Titan Tự Nhiên',
-      color_hex: '#A89F91',
+      color: 'Bạc',
+      color_hex: '#d6d6d6',
       storage: '256GB',
-      image_url: '/images/iphone17pro-natural.png',
+      image_url: '/images/iphone17pro-silver.jpg',
       description: 'Khung titan, camera 5x, chip A19 Pro'
     },
     {
@@ -40,10 +40,10 @@ export const ProductLineup = () => {
       model: 'iphone17_pro_max',
       price: 42990000,
       price_label: '42.990.000đ',
-      color: 'Titan Sa Mạc',
-      color_hex: '#C4A882',
+      color: 'Bạc',
+      color_hex: '#d6d6d6',
       storage: '256GB',
-      image_url: '/images/iphone17promax-sand.png',
+      image_url: '/images/iphone17pro-silver.jpg',
       description: 'Màn hình 6.9", pin 29 giờ, camera 5x Pro'
     },
     {
@@ -55,7 +55,7 @@ export const ProductLineup = () => {
       color: 'Ánh Sao',
       color_hex: '#F5F0E8',
       storage: '128GB',
-      image_url: '/images/iphone-air-white.png',
+      image_url: '/images/iphoneair-white.png',
       description: 'Mỏng nhất từ trước đến nay, chỉ 5.5mm'
     }
   ];
@@ -71,10 +71,8 @@ export const ProductLineup = () => {
           res.data.data.forEach((p) => {
             if (!seen.has(p.model)) {
               seen.add(p.model);
-              // Use correct generated local assets if backend points to .webp
-              let img = p.image_url.replace('.webp', '.png');
-              if (p.model === 'iphone_air') img = '/images/iphone-air-white.png';
-              uniqueModels.push({ ...p, image_url: img });
+              // Use direct image_url since schema.sql has correct file extension now
+              uniqueModels.push({ ...p });
             }
           });
           setProducts(uniqueModels);

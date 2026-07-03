@@ -13,11 +13,11 @@ export const SpecsAndColors = () => {
   ];
 
   const colorShowcase = [
-    { name: "Titan Đen", hex: "#1C1C1E", desc: "Mạnh mẽ, sang trọng và không bám vân tay." },
-    { name: "Cát Sa Mạc", hex: "#C4A882", desc: "Sắc vàng cát ấm áp cực kỳ thu hút ánh nhìn." },
-    { name: "Titan Tự Nhiên", hex: "#A89F91", desc: "Vẻ đẹp thuần khiết nguyên bản của kim loại titan." },
-    { name: "Xanh Trời", hex: "#7FB3D3", desc: "Tươi mát, trẻ trung và năng động." },
-    { name: "Tím Sâu", hex: "#3D1F5E", desc: "Bí ẩn, tinh tế và cực kỳ sang trọng." }
+    { name: "Bạc (Silver)", hex: "#d6d6d6", desc: "Vẻ đẹp thuần khiết nguyên bản của kim loại bạc sáng." },
+    { name: "Xanh Đậm (Deep Blue)", hex: "#354556", desc: "Sắc xanh thẳm của đại dương sâu, cuốn hút và thanh lịch." },
+    { name: "Cam Vũ Trụ (Cosmic Orange)", hex: "#d87040", desc: "Nổi bật, năng động mang đậm hơi thở không gian tương lai." },
+    { name: "Titan Đen", hex: "#1C1C1E", desc: "Mạnh mẽ, sang trọng và hạn chế bám dấu vân tay tối đa." },
+    { name: "Cát Sa Mạc", hex: "#C4A882", desc: "Sắc vàng cát sa mạc ấm áp và sang trọng." }
   ];
 
   return (

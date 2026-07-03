@@ -108,15 +108,17 @@ CREATE TABLE IF NOT EXISTS webhook_logs (
 -- SEED DATA: products
 -- ================================================
 INSERT INTO products (name, model, price, price_label, color, color_hex, storage, image_url, description) VALUES
-('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Titan Đen',    '#1C1C1E', '128GB', '/images/iphone17-black.webp',   'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
-('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Cát Sa Mạc',   '#C4A882', '128GB', '/images/iphone17-sand.webp',    'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
-('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Xanh Trời',    '#7FB3D3', '128GB', '/images/iphone17-blue.webp',    'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
-('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Ánh Sao',      '#F5F0E8', '128GB', '/images/iphone17-white.webp',   'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
-('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Tím Sâu',      '#3D1F5E', '128GB', '/images/iphone17-purple.webp',  'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
-('iPhone 17 Pro',       'iphone17_pro',     35990000, '35.990.000đ', 'Titan Tự Nhiên','#A89F91','256GB', '/images/iphone17pro-natural.webp','Khung titan, camera 5x, chip A19 Pro'),
-('iPhone 17 Pro',       'iphone17_pro',     35990000, '35.990.000đ', 'Titan Đen',    '#1C1C1E', '256GB', '/images/iphone17pro-black.webp', 'Khung titan, camera 5x, chip A19 Pro'),
-('iPhone 17 Pro Max',   'iphone17_pro_max', 42990000, '42.990.000đ', 'Titan Sa Mạc', '#C4A882', '256GB', '/images/iphone17promax-sand.webp','Màn hình 6.9", pin 29 giờ, camera 5x Pro'),
-('iPhone 17 Pro Max',   'iphone17_pro_max', 42990000, '42.990.000đ', 'Titan Đen',    '#1C1C1E', '256GB', '/images/iphone17promax-black.webp','Màn hình 6.9", pin 29 giờ, camera 5x Pro'),
-('iPhone Air',          'iphone_air',       23990000, '23.990.000đ', 'Ánh Sao',      '#F5F0E8', '128GB', '/images/iphoneair-white.webp',  'Mỏng nhất từ trước đến nay, 5.5mm'),
-('iPhone Air',          'iphone_air',       23990000, '23.990.000đ', 'Titan Đen',    '#1C1C1E', '128GB', '/images/iphoneair-black.webp',  'Mỏng nhất từ trước đến nay, 5.5mm'),
-('iPhone Air',          'iphone_air',       23990000, '23.990.000đ', 'Hồng',         '#F4A7B9', '128GB', '/images/iphoneair-pink.webp',   'Mỏng nhất từ trước đến nay, 5.5mm');
+('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Titan Đen',    '#1C1C1E', '128GB', '/images/iphone17-black.png',   'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
+('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Cát Sa Mạc',   '#C4A882', '128GB', '/images/iphone17-sand.png',    'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
+('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Xanh Trời',    '#7FB3D3', '128GB', '/images/iphone17-blue.png',    'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
+('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Ánh Sao',      '#F5F0E8', '128GB', '/images/iphone17-white.png',   'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
+('iPhone 17',           'iphone17',         27990000, '27.990.000đ', 'Tím Sâu',      '#3D1F5E', '128GB', '/images/iphone17-purple.png',  'Thiết kế mỏng nhẹ, chip A19, camera 48MP'),
+('iPhone 17 Pro',       'iphone17_pro',     35990000, '35.990.000đ', 'Bạc',          '#d6d6d6', '256GB', '/images/iphone17pro-silver.jpg', 'Khung titan, camera 5x, chip A19 Pro'),
+('iPhone 17 Pro',       'iphone17_pro',     35990000, '35.990.000đ', 'Xanh Đậm',     '#354556', '256GB', '/images/iphone17pro-blue.png',   'Khung titan, camera 5x, chip A19 Pro'),
+('iPhone 17 Pro',       'iphone17_pro',     35990000, '35.990.000đ', 'Cam Vũ Trụ',   '#d87040', '256GB', '/images/iphone17pro-orange.jpg', 'Khung titan, camera 5x, chip A19 Pro'),
+('iPhone 17 Pro Max',   'iphone17_pro_max', 42990000, '42.990.000đ', 'Bạc',          '#d6d6d6', '256GB', '/images/iphone17pro-silver.jpg', 'Màn hình 6.9", pin 29 giờ, camera 5x Pro'),
+('iPhone 17 Pro Max',   'iphone17_pro_max', 42990000, '42.990.000đ', 'Xanh Đậm',     '#354556', '256GB', '/images/iphone17pro-blue.png',   'Màn hình 6.9", pin 29 giờ, camera 5x Pro'),
+('iPhone 17 Pro Max',   'iphone17_pro_max', 42990000, '42.990.000đ', 'Cam Vũ Trụ',   '#d87040', '256GB', '/images/iphone17pro-orange.jpg', 'Màn hình 6.9", pin 29 giờ, camera 5x Pro'),
+('iPhone Air',          'iphone_air',       23990000, '23.990.000đ', 'Ánh Sao',      '#F5F0E8', '128GB', '/images/iphoneair-white.png',  'Mỏng nhất từ trước đến nay, 5.5mm'),
+('iPhone Air',          'iphone_air',       23990000, '23.990.000đ', 'Titan Đen',    '#1C1C1E', '128GB', '/images/iphoneair-black.png',  'Mỏng nhất từ trước đến nay, 5.5mm'),
+('iPhone Air',          'iphone_air',       23990000, '23.990.000đ', 'Hồng',         '#F4A7B9', '128GB', '/images/iphoneair-pink.png',   'Mỏng nhất từ trước đến nay, 5.5mm');

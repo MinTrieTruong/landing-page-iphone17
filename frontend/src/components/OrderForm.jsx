@@ -182,10 +182,10 @@ export const OrderForm = () => {
     let defaultStorage = '128GB';
 
     if (selectedModel === 'iphone17_pro') {
-      defaultColor = 'Titan Tự Nhiên';
+      defaultColor = 'Bạc';
       defaultStorage = '256GB';
     } else if (selectedModel === 'iphone17_pro_max') {
-      defaultColor = 'Titan Sa Mạc';
+      defaultColor = 'Bạc';
       defaultStorage = '256GB';
     } else if (selectedModel === 'iphone_air') {
       defaultColor = 'Ánh Sao';
@@ -327,14 +327,16 @@ export const OrderForm = () => {
                     )}
                     {formData.model === 'iphone17_pro' && (
                       <>
-                        <option value="Titan Tự Nhiên">Titan Tự Nhiên</option>
-                        <option value="Titan Đen">Titan Đen</option>
+                        <option value="Bạc">Bạc (Silver)</option>
+                        <option value="Xanh Đậm">Xanh Đậm (Deep Blue)</option>
+                        <option value="Cam Vũ Trụ">Cam Vũ Trụ (Cosmic Orange)</option>
                       </>
                     )}
                     {formData.model === 'iphone17_pro_max' && (
                       <>
-                        <option value="Titan Sa Mạc">Titan Sa Mạc</option>
-                        <option value="Titan Đen">Titan Đen</option>
+                        <option value="Bạc">Bạc (Silver)</option>
+                        <option value="Xanh Đậm">Xanh Đậm (Deep Blue)</option>
+                        <option value="Cam Vũ Trụ">Cam Vũ Trụ (Cosmic Orange)</option>
                       </>
                     )}
                     {formData.model === 'iphone_air' && (
