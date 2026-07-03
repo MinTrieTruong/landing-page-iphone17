@@ -9,6 +9,7 @@ import { AppleIntelligence } from './components/AppleIntelligence';
 import { Camera } from './components/Camera';
 import { Performance } from './components/Performance';
 import { SpecsAndColors } from './components/SpecsAndColors';
+import { OrderForm } from './components/OrderForm';
 import { Footer } from './components/Footer';
 import { ToastContainer } from './components/Toast';
 
@@ -16,7 +17,6 @@ import { ToastContainer } from './components/Toast';
 const FAQ = React.lazy(() => import('./components/FAQ').then(m => ({ default: m.FAQ })));
 const ProductLineup = React.lazy(() => import('./components/ProductLineup').then(m => ({ default: m.ProductLineup })));
 const ViewedHistory = React.lazy(() => import('./components/ViewedHistory').then(m => ({ default: m.ViewedHistory })));
-const OrderForm = React.lazy(() => import('./components/OrderForm').then(m => ({ default: m.OrderForm })));
 const Chatbot = React.lazy(() => import('./components/Chatbot').then(m => ({ default: m.Chatbot })));
 
 const MainLayout = () => {
@@ -64,9 +64,7 @@ const MainLayout = () => {
         </React.Suspense>
 
         {/* Section 9: Pre-order validation form */}
-        <React.Suspense fallback={<div className="container max-w-7xl mx-auto px-4 py-12"><div className="h-96 bg-zinc-50 dark:bg-zinc-900 rounded-2xl animate-pulse" /></div>}>
-          <OrderForm />
-        </React.Suspense>
+        <OrderForm />
       </main>
 
       {/* Floating Chatbot Assistant */}
