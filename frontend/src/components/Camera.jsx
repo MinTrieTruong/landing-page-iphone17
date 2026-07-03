@@ -13,9 +13,9 @@ export const Camera = () => {
       icon: <CameraIcon className="w-6 h-6 text-blue-400" />
     },
     zoom: {
-      title: "Thu Phóng Quang Học 5x Cận Cảnh",
-      desc: "Trang bị thấu kính tiềm vọng lăng kính tetraprism tiên tiến, mang lại khả năng zoom 5x sắc nét tuyệt đối, bắt trọn từng khoảnh khắc ở xa.",
-      features: ["Zoom quang học 5x sắc nét", "Khẩu độ f/2.8 thu sáng cực tốt", "Tiêu cự tương đương 120mm"],
+      title: "Thu Phóng Quang Học 8x Cận Cảnh",
+      desc: "Trang bị thấu kính tiềm vọng lăng kính tetraprism tiên tiến, mang lại khả năng zoom 8x sắc nét tuyệt đối, bắt trọn từng khoảnh khắc ở xa.",
+      features: ["Zoom quang học 8x siêu cận", "Khẩu độ f/2.8 thu sáng cực tốt", "Tiêu cự tương đương 120mm"],
       bg: "from-indigo-900/40 to-black",
       icon: <ZoomIn className="w-6 h-6 text-indigo-400" />
     },
@@ -75,41 +75,22 @@ export const Camera = () => {
 
           {/* Visualization Column */}
           <div className="lg:col-span-7 order-1 lg:order-2 reveal-right">
-            <div className={`relative aspect-video rounded-3xl overflow-hidden border border-zinc-800 bg-gradient-to-br ${currentTab.bg} transition-all duration-700 p-8 flex flex-col justify-between`}>
+            <div className={`relative aspect-video rounded-3xl overflow-hidden border border-zinc-800 bg-black transition-all duration-700`}>
               
-              {/* Camera Lens simulation decoration */}
-              <div className="absolute -top-1/4 -right-1/4 w-80 h-80 rounded-full border border-purple-500/20 flex items-center justify-center pointer-events-none">
-                <div className="w-60 h-60 rounded-full border border-purple-500/10 flex items-center justify-center">
-                  <div className="w-40 h-40 rounded-full bg-purple-500/5" />
-                </div>
-              </div>
+              {/* Main Camera image display */}
+              <img
+                src="/images/iphone17-camera.jpg"
+                alt="Hệ thống Camera 48MP Đột Phá"
+                className={`w-full h-full object-cover transition-all duration-500 ${
+                  activeTab === 'night' ? 'brightness-50 sepia hue-rotate-[280deg] saturate-150' : ''
+                }`}
+              />
 
-              {/* Tag */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/80 border border-zinc-700 text-xs font-bold w-fit uppercase">
+              {/* Dynamic tag overlay */}
+              <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/70 border border-zinc-700 text-xs font-bold text-white uppercase backdrop-blur-md">
                 {currentTab.icon}
-                <span>Tính Năng Tiêu Biểu</span>
+                <span>{currentTab.title}</span>
               </div>
-
-              {/* Desc */}
-              <div className="relative z-10 space-y-4 max-w-lg mt-12">
-                <h4 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-                  {currentTab.title}
-                </h4>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  {currentTab.desc}
-                </p>
-                
-                {/* Bullet Points */}
-                <ul className="space-y-2 pt-2">
-                  {currentTab.features.map((f, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-xs font-medium text-purple-300">
-                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
             </div>
           </div>
 
