@@ -1,16 +1,16 @@
 import React, { useState, useRef } from 'react';
 
 export const Hero = () => {
-  const [selectedColor, setSelectedColor] = useState('black');
+  const [selectedColor, setSelectedColor] = useState(null);
   const heroRef = useRef(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
   const colors = [
-    { name: 'Titan Đen', id: 'black', hex: '#1C1C1E', img: '/images/iphone17-black.png' },
-    { name: 'Cát Sa Mạc', id: 'sand', hex: '#C4A882', img: '/images/iphone17-sand.png' },
-    { name: 'Xanh Trời', id: 'blue', hex: '#7FB3D3', img: '/images/iphone17-blue.png' },
-    { name: 'Ánh Sao', id: 'white', hex: '#F5F0E8', img: '/images/iphone17-white.png' },
-    { name: 'Tím Sâu', id: 'purple', hex: '#3D1F5E', img: '/images/iphone17-purple.png' },
+    { name: 'Tím Oải Hương (Lavender)', id: 'lavender', hex: '#D1C4E9', img: '/images/iphone17-lavender.jpg' },
+    { name: 'Xanh Lá Xô Thơm (Sage)', id: 'sage', hex: '#C8E6C9', img: '/images/iphone17-all.jpg' },
+    { name: 'Xanh Lam Khói (Mist Blue)', id: 'mist_blue', hex: '#B3E5FC', img: '/images/iphone17-all.jpg' },
+    { name: 'Đen (Black)', id: 'black', hex: '#212121', img: '/images/iphone17-black.png' },
+    { name: 'Trắng (White)', id: 'white', hex: '#F5F5F5', img: '/images/iphone17-white.png' },
   ];
 
   const handleMouseMove = (e) => {
@@ -27,7 +27,8 @@ export const Hero = () => {
     setRotation({ x: 0, y: 0 });
   };
 
-  const activeColor = colors.find((c) => c.id === selectedColor) || colors[0];
+  const activeColor = selectedColor ? colors.find((c) => c.id === selectedColor) : null;
+  const activeImg = activeColor ? activeColor.img : '/images/iphone17-hero.png';
 
   return (
     <section
@@ -50,14 +51,14 @@ export const Hero = () => {
           <p className="text-2xl sm:text-3xl font-medium text-gray-500 dark:text-zinc-400">
             Beyond Intelligence.
           </p>
-          <p className="text-base text-gray-600 dark:text-zinc-400 max-w-lg mx-auto lg:mx-0">
+          <p className="text-gray-600 dark:text-zinc-300 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base leading-relaxed">
             Khám phá kỷ nguyên mới với Apple Intelligence hoàn toàn tiếng Việt, khung Titan siêu bền bỉ, và hiệu năng từ siêu chip A19 3nm thế hệ tiếp theo.
           </p>
 
           {/* Color Selector */}
           <div className="space-y-3">
             <span className="text-sm font-semibold text-gray-500 dark:text-zinc-400 block">
-              Màu sắc: <strong className="text-gray-900 dark:text-white">{activeColor.name}</strong>
+              Màu sắc: <strong className="text-gray-900 dark:text-white">{activeColor ? activeColor.name : 'Titanium'}</strong>
             </span>
             <div className="flex justify-center lg:justify-start gap-3">
               {colors.map((color) => (
@@ -97,17 +98,17 @@ export const Hero = () => {
           className="flex justify-center items-center h-[400px] sm:h-[550px] relative cursor-pointer"
         >
           <div
-            className="phone-3d relative w-72 sm:w-96 aspect-[9/18.5] flex items-center justify-center transition-transform duration-100 ease-out"
+            className="phone-3d relative w-full max-w-lg aspect-square lg:aspect-video flex items-center justify-center transition-transform duration-100 ease-out"
             style={{
               transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
             }}
           >
             <img
-              src={activeColor.img}
-              alt={`iPhone 17 ${activeColor.name}`}
-              className="w-full h-full object-contain pointer-events-none drop-shadow-2xl"
+              src={activeImg}
+              alt={activeColor ? `iPhone 17 ${activeColor.name}` : 'iPhone 17 Pro Hero'}
+              className="w-full h-full max-h-[480px] object-contain pointer-events-none drop-shadow-2xl rounded-2xl"
               onError={(e) => {
-                e.target.src = '/images/iphone17-hero.png';
+                e.target.src = '/images/iphone17-black.png';
               }}
             />
           </div>
