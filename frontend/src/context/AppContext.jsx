@@ -11,8 +11,8 @@ const uuidv4 = () => {
 
 const AppContext = createContext();
 
-// Setup base URL for axios
-axios.defaults.baseURL = 'http://localhost:3001';
+// Setup base URL for axios (empty string defaults to current host/domain, which works in Vercel Monorepo deployment)
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || '';
 
 export const AppProvider = ({ children }) => {
   // Session ID for cart/favorites mapping
